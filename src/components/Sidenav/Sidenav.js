@@ -2,6 +2,7 @@ import React from 'react';
 import SidenavCloseIcon from './SidenavCloseIcon';
 import SidenavList from './SidenavList';
 import styled from 'styled-components';
+import SidenavBrand from './SidenavBrand';
 
 export default function() {
 
@@ -28,8 +29,9 @@ export default function() {
 
     return (
         <Sidenav>
-          <SidenavCloseIcon />
-          <SidenavList />
+            <SidenavBrand />
+            <SidenavCloseIcon />
+            <SidenavList />
         </Sidenav>
     )
 }
