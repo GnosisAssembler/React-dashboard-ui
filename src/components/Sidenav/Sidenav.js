@@ -18,7 +18,7 @@ export default function() {
         transition: all .6s ease-in-out;
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
         z-index: 2; 
-        background-color: #394263;
+        background-color: rgb(28, 28, 28);
 
         @media only screen and (min-width: 46.875em) {
             position: relative;

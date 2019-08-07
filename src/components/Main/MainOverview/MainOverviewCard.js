@@ -10,7 +10,7 @@ export default function() {
         align-items: center;
         justify-content: space-between;
         padding: 20px;
-        background-color: #d3d3;
+        background-color:rgb(8, 20, 128);
     `
 
     return (

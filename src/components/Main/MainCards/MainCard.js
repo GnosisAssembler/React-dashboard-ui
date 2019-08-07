@@ -8,7 +8,7 @@ export default function() {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        background-color: #82bef6;
+        background-color: rgb(0, 202, 248);
         margin-bottom: 20px;
         -webkit-column-break-inside: avoid;
         padding: 24px;

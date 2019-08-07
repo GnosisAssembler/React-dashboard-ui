@@ -11,7 +11,7 @@ export default function() {
         align-items: center;
         justify-content: space-between;
         padding: 0 16px;
-        background-color: #648ca6;
+        background-color: lightgrey;
     `
 
     return (

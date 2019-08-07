@@ -12,7 +12,8 @@ export default function() {
         margin: 20px;
         padding: 20px;
         height: 150px;
-        background-color: #e3e4e6;
+        background: rgb(2,0,36);
+        background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
         color: slategray;
     `
 

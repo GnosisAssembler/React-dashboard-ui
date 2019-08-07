@@ -8,7 +8,7 @@ export default function() {
 
     const Main = styled.main`
         grid-area: main;
-        background-color: #8fd4d9;
+        background-color: rgb(255, 255, 255);
     `
 
     return (
