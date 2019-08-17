@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderAvatar from './HeaderAvatar';
+import HeaderNotifications from './HeaderNotifications';
 import HeaderSearch from './HeaderSearch';
 import styled from 'styled-components';
 
@@ -11,13 +11,14 @@ export default function() {
         align-items: center;
         justify-content: space-between;
         padding: 0 16px;
-        background-color: lightgrey;
+        background: rgb(94,114,227);
+        background: linear-gradient(77deg, rgba(94,114,227,1) 0%, rgba(131,148,241,1) 100%);
     `
 
     return (
         <Header>
          <HeaderSearch />
-         <HeaderAvatar />
+         <HeaderNotifications />
        </Header>
     )
 }

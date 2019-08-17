@@ -12,11 +12,15 @@ export default function() {
 
     return (
         <SidenavList>
-            <SidenavListItem></SidenavListItem>
-            <SidenavListItem></SidenavListItem>
-            <SidenavListItem></SidenavListItem>
-            <SidenavListItem></SidenavListItem>
-            <SidenavListItem></SidenavListItem>
+            <SidenavListItem itemName={"Dashboard"} itemIcon={"MdDashboard"}/>
+            <SidenavListItem itemName={"Quotes"} itemIcon={"MdMessage"}/>
+            <SidenavListItem itemName={"Weight"} itemIcon={"MdNetworkCheck"}/>
+            <SidenavListItem itemName={"Budget"} itemIcon={"MdAttachMoney"}/>
+            <SidenavListItem itemName={"Mast"} itemIcon={"MdPanTool"}/>
+            <SidenavListItem itemName={"RoutineCounter"} itemIcon={"MdAirlineSeatIndividualSuite"}/>
+            <SidenavListItem itemName={"Goals"} itemIcon={"MdWhatshot"}/>
+            <SidenavListItem itemName={"Gym"} itemIcon={"MdFitnessCenter"}/>
+            <SidenavListItem itemName={"Nutrition"} itemIcon={"MdLocalDining"}/>
         </SidenavList>
     )
 }

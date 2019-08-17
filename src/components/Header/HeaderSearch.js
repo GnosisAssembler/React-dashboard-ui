@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MdSearch } from "react-icons/md";
 
 export default function () {
 
@@ -8,9 +9,22 @@ export default function () {
         @media only screen and (min-width: 46.875em) {
             margin-left: 0;
         }
+        background-color: white;
+        border-radius: 15px;
+        padding: 3px;
+    `
+
+    const HeaderSearchInput = styled.input`
+        width: 250px;
+        border: 0;
+        background-color: transparent;
+        padding-left: 5px;
     `
 
     return (
-        <HeaderSearch>Search</HeaderSearch>
+        <HeaderSearch>
+            <span style={{color:'grey', fontSize:'20px'}}><MdSearch /></span>
+            <HeaderSearchInput placeholder="Search"/>
+        </HeaderSearch>
     )
 }

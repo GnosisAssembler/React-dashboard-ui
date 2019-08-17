@@ -18,7 +18,7 @@ export default function() {
         <MainCards>
             <MainCard />
             <MainCard />
-            <MainCard />
+            <MainCard isRed={true}/>
         </MainCards>
     )
 }
