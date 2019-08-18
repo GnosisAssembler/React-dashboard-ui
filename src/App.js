@@ -1,9 +1,14 @@
 import React from 'react';
 import Grid from './components/Grid';
+import AppProvider from './AppProvider';
 
+// Wrap App with AppProvider so that the context will be available to all components
 function App() {
   return (
-    <Grid />
+    <AppProvider>
+      <Grid />
+    </AppProvider>
+    
   );
 }
 
