@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderNotifications from './HeaderNotifications';
-import HeaderSearch from './HeaderSearch';
+import HeaderTitle from './HeaderTitle';
 import styled from 'styled-components';
 
 export default function() {
@@ -17,7 +17,7 @@ export default function() {
 
     return (
         <Header>
-         <HeaderSearch />
+         <HeaderTitle />
          <HeaderNotifications />
        </Header>
     )

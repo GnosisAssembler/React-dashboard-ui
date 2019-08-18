@@ -24,26 +24,23 @@ export default function() {
         grid-area: main;
         background-color: #F1F3F9;
     `
-    
 
     return (
-        
-            <Router>
-                <Sidenav />
-                <Main>
-                    <Switch>
-                        <Route path="/dashboard" exact component={Dashboard} />
-                        <Route path="/quotes" exact component={Quotes} />
-                        <Route path="/weight" exact component={Weight} />
-                        <Route path="/budget" exact component={Budget} />
-                        <Route path="/mast" exact component={Mast} />
-                        <Route path="/routine" exact component={Routine} />
-                        <Route path="/goals" exact component={Goals} />
-                        <Route path="/gym" exact component={Gym} />
-                        <Route path="/nutrition" exact component={Nutrition} />
-                    </Switch>
-                </Main>
-            </Router>
-        
+        <Router>
+            <Sidenav />
+            <Main>
+                <Switch>
+                    <Route path="/" exact component={Dashboard} />
+                    <Route path="/quotes" exact component={Quotes} />
+                    <Route path="/weight" exact component={Weight} />
+                    <Route path="/budget" exact component={Budget} />
+                    <Route path="/mast" exact component={Mast} />
+                    <Route path="/routine" exact component={Routine} />
+                    <Route path="/goals" exact component={Goals} />
+                    <Route path="/gym" exact component={Gym} />
+                    <Route path="/nutrition" exact component={Nutrition} />
+                </Switch>
+            </Main>
+        </Router>
     )
 }

@@ -13,7 +13,7 @@ export default function() {
 
     return (
         <SidenavList>
-            <Link to="/dashboard">
+            <Link to="/">
                 <SidenavListItem itemName={"Dashboard"} itemIcon={"MdDashboard"}/>
             </Link>
             <Link to="/quotes">
