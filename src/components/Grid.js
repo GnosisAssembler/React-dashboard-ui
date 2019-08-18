@@ -3,7 +3,6 @@ import './Grid.css';
 import MenuIcon from './MenuIcon/MenuIcon';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import Sidenav from './Sidenav/Sidenav';
 import Main from './Main/Main';
 import styled from 'styled-components';
 
