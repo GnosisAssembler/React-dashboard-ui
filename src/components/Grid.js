@@ -1,10 +1,10 @@
 import React from 'react';
 import './Grid.css';
-import MenuIcon from './components/MenuIcon/MenuIcon';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Sidenav from './components/Sidenav/Sidenav';
-import Main from './components/Main/Main';
+import MenuIcon from './MenuIcon/MenuIcon';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
+import Sidenav from './Sidenav/Sidenav';
+import Main from './Main/Main';
 import styled from 'styled-components';
 
 export default function() {
