@@ -30,11 +30,10 @@ export default function() {
 
     return (
         <Grid>
-          <MenuIcon />
-          <Header /> 
-          <Sidenav />
-          <Main />
-          <Footer />
-        </Grid>
+            <MenuIcon />
+            <Header /> 
+            <Main />
+            <Footer />
+        </Grid>  
     )
 }
