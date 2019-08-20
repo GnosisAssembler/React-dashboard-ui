@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// Create Context
+// Create Context (store)
 export const AppContext = React.createContext();
 
 // Create AppProvider
