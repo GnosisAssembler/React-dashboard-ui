@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose
-  .connect('mongodb://localhost/reactdashbaordui', { useNewUrlParser: true })
+  .connect('mongodb://localhost/reactdashboardui', { useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
