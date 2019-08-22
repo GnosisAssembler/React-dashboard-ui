@@ -43,6 +43,32 @@ export default class Weight extends Component {
               
         })
         .catch(() => console.log("Cant access server due to broswer!"));
+
+        // Fetch latest weight
+        fetch('http://localhost:5000/api/weights/last')
+          .then(res => {
+              console.log(res);
+              return res.json()
+        })
+            // Response from the server with the latest weight
+          .then(latestWeight => { 
+            
+            if(latestWeight[0].kg==='undefined') {
+                console.log('no weight to show')
+            } else {
+                //update the state with the current weight
+                this.setState(() => {
+                    return {
+                        kg: latestWeight[0].kg,
+                        date: latestWeight[0].date
+                    }
+                });
+            }
+            
+              
+        })
+        .catch(() => console.log("Cant access server due to broswer!"));
+
     }
 
     // handle the insertion of new weight
@@ -51,7 +77,7 @@ export default class Weight extends Component {
 
         // Current kg and date that the user has entered
         const kg = e.target.elements.kg.value.trim();
-        const date = new Date().toLocaleString();
+        const date = new Date().toDateString();
 
         // Post weight entry to database
         axios.post('http://localhost:5000/api/weights', {

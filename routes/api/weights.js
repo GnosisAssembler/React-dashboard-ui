@@ -20,7 +20,15 @@ router.get('/', (req, res) => {
       .sort({ date: -1 })
       .then(weights => res.json(weights))
       .catch(err => res.status(404).json({ noweightsfound: 'No weights found' }));
-  });
+});
+
+router.get('/last', (req, res) => {
+  Weight.find()
+    .sort({$natural: -1})
+    .limit(1)
+    .then(weights => res.json(weights))
+    .catch(err => res.status(404).json({ noweightsfound: 'No last weight found' }));
+});
 
 // @route   POST api/weights/createWeight
 // @desc    Create weight route
