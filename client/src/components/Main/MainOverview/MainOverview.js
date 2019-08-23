@@ -2,6 +2,8 @@ import React from 'react';
 import MainOverviewCard from './MainOverviewCard';
 import styled from 'styled-components';
 
+import {AppContext} from '../../../AppProvider';
+
 export default function() {
 
     const MainOverview = styled.div`
@@ -11,13 +13,17 @@ export default function() {
         grid-gap: 20px;
         margin: 20px;
     `
-
+    // Wrap component with AppConsumer so that we can use the context
     return (
-        <MainOverview>
-            <MainOverviewCard />
-            <MainOverviewCard />
-            <MainOverviewCard />
-            <MainOverviewCard />
-        </MainOverview>
-    )
+        <AppContext.Consumer>  
+            {(context) => (
+                <MainOverview>
+                    <MainOverviewCard weight={context.kg}/>
+                    <MainOverviewCard />
+                    <MainOverviewCard />
+                    <MainOverviewCard />
+                    </MainOverview>
+            )}
+        </AppContext.Consumer>
+    );
 }

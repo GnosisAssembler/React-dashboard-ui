@@ -3,7 +3,7 @@ import MainOverviewCardIcon from './MainOverviewCardIcon';
 import MainOverviewCardInfo from './MainOverviewCardInfo';
 import styled from 'styled-components';
 
-export default function() {
+export default function(props) {
 
     const MainOverviewCard = styled.div`
         display: flex;
@@ -16,7 +16,7 @@ export default function() {
 
     return (
         <MainOverviewCard>
-              <MainOverviewCardIcon />
+              <p>{props.weight} kg</p>
               <MainOverviewCardInfo />
         </MainOverviewCard>
     )
