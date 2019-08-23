@@ -1,6 +1,4 @@
 import React from 'react';
-import MainOverviewCardIcon from './MainOverviewCardIcon';
-import MainOverviewCardInfo from './MainOverviewCardInfo';
 import styled from 'styled-components';
 
 export default function(props) {
@@ -16,8 +14,8 @@ export default function(props) {
 
     return (
         <MainOverviewCard>
-              <p>{props.weight} kg</p>
-              <MainOverviewCardInfo />
+              <p>{props.kg} kg</p>
+              <p>{props.date}</p>
         </MainOverviewCard>
     )
 }

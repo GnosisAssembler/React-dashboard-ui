@@ -18,7 +18,7 @@ export default function() {
         <AppContext.Consumer>  
             {(context) => (
                 <MainOverview>
-                    <MainOverviewCard weight={context.kg}/>
+                    <MainOverviewCard kg={context.kg} date={context.date}/>
                     <MainOverviewCard />
                     <MainOverviewCard />
                     <MainOverviewCard />

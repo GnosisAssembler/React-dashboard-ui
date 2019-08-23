@@ -8,7 +8,6 @@ export default class AppProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            counter: 1,
             kg:0,
             date:""
         };
