@@ -1,26 +1,47 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Chart from '../graphs/Chart';
+import styled from 'styled-components';
 
-//? REACT VIS
-import { HorizontalGridLines,
-    VerticalGridLines,
-    XAxis,
-    XYPlot,
-    YAxis,
-    LineMarkSeries} from 'react-vis';
+const CurrentWeight = styled.div`
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    margin: 50px;
+    border-radius: 30px;
+`
 
-  function Chart({data}) {
-    return <XYPlot width={400} height={300}><XAxis/><YAxis/>
-      <HorizontalGridLines />
-      <VerticalGridLines />
-      <LineMarkSeries data={data} />
-      </XYPlot>;
-  }
-  
-  const data = new Array(19).fill(0).reduce((prev, curr) => [...prev, {
-    x: prev.slice(-1)[0].x + 1,
-    y: prev.slice(-1)[0].y * (0.9 + Math.random() * 0.2) 
-  }], [{x: 0, y: 10}]);
+const HistoryContainer = styled.div`
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #697CE7;
+    padding: 10px;
+    margin: 20px 0;
+`
+
+const HistoryWeight = styled.div`
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+`
+
+const InputWeight = styled.input`
+    border-radius: 5px;
+    padding: 5px;
+`
+
+const ButtonWeight = styled.button`
+    padding: 5px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    box-shadow:none;
+
+    &:hover{
+        background-color: cyan;
+    }
+`
 
 export default class Weight extends Component {
     constructor(props) {
@@ -31,6 +52,21 @@ export default class Weight extends Component {
             historyKg: [],
             historyDate: []
         }
+
+        // React-vis data
+        this.data = [
+            
+        ];
+    }
+
+    // populate the data on the graph
+    //todo handle the dates and months
+    populateData(populateKg, populateDate) {
+        this.data.push({
+            x:populateDate, 
+            y:populateKg
+        });
+        console.log(this.data);
     }
 
     // Fetch all the weight entries from the database
@@ -53,6 +89,10 @@ export default class Weight extends Component {
             for(var i=0; i<serverWeights.length; i++) {
                 listHistoryKg.push(serverWeights[i].kg);
                 listHistoryDate.push(serverWeights[i].date);
+
+                // populate the graph with the server data
+                //todo handle the date because it cant be displayed as a string
+                this.populateData(serverWeights[i].kg,serverWeights[i].date);
             }
             //update the state with the temporary lists
             this.setState(() => {
@@ -89,7 +129,6 @@ export default class Weight extends Component {
               
         })
         .catch(() => console.log("Cant access server due to broswer!"));
-
     }
 
     // handle the insertion of new weight
@@ -133,40 +172,26 @@ export default class Weight extends Component {
         return (
             <div style={{color:'black'}}>
                 {/*Current weight*/}
-                <div style={{height:'50px', backgroundColor:'grey', textAlign:'center'}}>
+                <CurrentWeight>
                     {this.state.kg} , {this.state.date}
-                </div>
+                </CurrentWeight>
                 {/*Form*/}
                 <h4>Enter weight (kgs):</h4>
                 <form onSubmit={this.handleAddWeight}>
-                    <input 
+                    <InputWeight 
                         type="text" 
                         name="kg"/>
-                    <button>Add Weight</button>
+                    <ButtonWeight>Add Weight</ButtonWeight>
                 </form>
                 {/*History weights*/}
-                <div style={{height:'150px', backgroundColor:'cyan'}}>
-                    <ul>
-                        {this.state.historyKg.map(item => (
-                            <div>
-                                <li key={item}>Kg: {item}</li>
-                                <hr></hr>
-                            </div>
-                           
-                        ))}
-                    </ul>
-                    <ul>
-                        {this.state.historyDate.map(item2 => (
-                            <div>
-                                <li key={item2}>Date: {item2}</li>
-                                <hr></hr>
-                            </div>
-                            
-                        ))}
-                    </ul>
-                </div>
-                <br></br><br></br>
-                <Chart data={data}/>
+                <HistoryContainer>
+                    {this.state.historyKg.map(item => (
+                        <HistoryWeight>
+                            <p key={item}>Kg: {item}</p>
+                        </HistoryWeight>
+                    ))}
+                </HistoryContainer>
+                <Chart data={this.data}/>
             </div>
         )
     }
