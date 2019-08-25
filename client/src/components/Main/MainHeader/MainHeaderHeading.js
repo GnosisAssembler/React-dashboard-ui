@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function MainHeaderHeading() {
+export default function MainHeaderHeading(props) {
     return (
         <div>
-           <p>Heading</p>
+           <p>{props.randomQuote}</p>
         </div>
         
     );

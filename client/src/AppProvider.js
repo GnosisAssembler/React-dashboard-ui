@@ -9,7 +9,14 @@ export default class AppProvider extends Component {
         super(props);
         this.state = {
             kg:0,
-            date:""
+            date:"",
+            quotes: [
+                "Sleep. Work. Train. Repeat.",
+                "Pain is temporary, pride is forever",
+                "When my body shouts ‘STOP’, my mind screams ‘NEVER’",
+                "Train like a beast, look like a beauty"
+            ],
+            pickedQuote: ""
         };
     }
 
@@ -35,6 +42,14 @@ export default class AppProvider extends Component {
                 }   
             })
             .catch(() => console.log("Cant access server due to broswer!"));
+
+            // Pick a random quote
+            let randomQuote = Math.floor(Math.random() * 5);
+            this.setState(() => {
+                return {
+                    pickedQuote: this.state.quotes[randomQuote]
+                }
+            });
         }
     
     // Set value as the state of the context

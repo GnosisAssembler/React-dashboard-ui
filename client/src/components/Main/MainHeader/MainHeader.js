@@ -3,6 +3,7 @@ import MainHeaderHeading from './MainHeaderHeading';
 import MainHeaderUpdates from './MainHeaderUpdates';
 import styled from 'styled-components';
 
+import {AppContext} from '../../../AppProvider';
 
 export default function() {
 
@@ -18,9 +19,13 @@ export default function() {
     `
 
     return (
-        <MainHeader>
-            <MainHeaderHeading />
-            <MainHeaderUpdates />
-        </MainHeader>
+        <AppContext.Consumer> 
+             {(context) => ( 
+                <MainHeader>
+                    <MainHeaderHeading randomQuote={context.pickedQuote}/>
+                    <MainHeaderUpdates />
+                </MainHeader>
+            )}
+        </AppContext.Consumer>
     )
 }

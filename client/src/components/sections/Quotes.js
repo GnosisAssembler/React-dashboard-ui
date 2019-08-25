@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-export default function Quotes() {
-    return (
-        <div style={{fontSize:'30px', color:'red'}}>
-            QUOTES
-        </div>
-    )
+export default class Quotes extends Component {
+
+    render() {
+        return (
+            <div style={{color: 'black'}}>
+              insert quotes (TODO)
+            </div>
+        )
+    }
 }

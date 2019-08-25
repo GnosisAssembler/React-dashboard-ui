@@ -16,7 +16,7 @@ export default class Mast extends Component {
           counterDate: ""
         }   
 
-        //todo populate date
+        //todo populate date values
         //todo fix the string format of date
         this.data = [
             {
