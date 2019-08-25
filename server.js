@@ -7,6 +7,7 @@ var cors = require('cors');
 
 // Bring in routes
 const weights = require('./routes/api/weights');
+const masts = require('./routes/api/masts');
 
 // Init app
 const app = express();
@@ -25,6 +26,7 @@ mongoose
 
 // Use routes
 app.use('/api/weights', weights);
+app.use('/api/masts', masts);
 
 // Configure port
 const port = process.env.PORT || 5000;
