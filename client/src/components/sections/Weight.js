@@ -91,7 +91,7 @@ export default class Weight extends Component {
                 listHistoryDate.push(serverWeights[i].date);
 
                 // populate the graph with the server data
-                //todo handle the date because it cant be displayed as a string
+                //todo handle the date because it cant be displayed as a string in the graph
                 this.populateData(serverWeights[i].kg,serverWeights[i].date);
             }
             //update the state with the temporary lists
